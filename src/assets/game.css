@@ -1,0 +1,53 @@
+.game {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.game__card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    background: rebeccapurple;
+    border-radius: 10px;
+    color: transparent;
+    font-size: 20px;
+    transform: perspective(100px) rotateY(180deg);
+    transition: .3s;
+    user-select: none;
+    border: 1px solid transparent;
+}
+
+.game__card:hover {
+    border: 1px solid yellow;
+    opacity: .8;
+}
+
+.game__card--open {
+    color: white;
+    background: cornflowerblue;
+    transform: rotateY(0deg);
+}
+
+.game__card--success {
+    color: white;
+    background: green;
+    transform: rotateY(0deg);
+}
+
+.game__card--open:hover,
+.game__card--success:hover {
+    border: 1px solid transparent;
+    opacity: initial;
+}
+
+.info-block {
+    position: fixed;
+    right: 100px;
+    text-align: right;
+}
