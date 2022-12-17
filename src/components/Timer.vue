@@ -40,9 +40,7 @@ function start() {
     time.value = 0;
     const tick = 10;
 
-    intervalId.value = setInterval(() => {
-        time.value += tick;
-    }, tick);
+    intervalId.value = setInterval(() => time.value += tick, tick);
 }
 
 function stop() {

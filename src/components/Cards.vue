@@ -19,9 +19,7 @@ import Timer from './Timer.vue'
 import {computed, onMounted, ref, watch} from "vue";
 import type TCard from "@/types/TCard";
 
-onMounted(() => {
-    newGame();
-});
+onMounted(newGame);
 
 const cards = ref<TCard[]>([]);
 const firstClick = ref<boolean>(false);
@@ -52,9 +50,9 @@ const successCards = computed(() => {
     return initCards;
 });
 
-watch(() => successCards, (newArray) => {
-    if (newArray.value.length === cards.value.length) {
-        setTimeout(() => {newGame()},1000);
+watch(successCards, (value) => {
+    if (value.length === cards.value.length) {
+        setTimeout(newGame,1000);
     }
 });
 
